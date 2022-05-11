@@ -5,8 +5,9 @@ Student 2: Emiliano Saucedo Arriola | A01659258
 
 Cannon, hitting targets with projectiles.
 
+
 1. Make the movement speed for the projectile and the balls faster [DONE BY ALEJANDRO]
-2. Make the game never end, so that the balls when leaving the window are repositioned.[EMILIANO]
+2. Make the game never end, so that the balls when leaving the window are repositioned.[DONE BY EMILIANO]
 """
 
 from random import randrange
@@ -72,10 +73,13 @@ def move():
 
     draw()
 
+    # Not ending game - When dots go out of the screen (left side), they are relocated (right side)
     for target in targets:
         if not inside(target):
-            return
+            # return (Deleted line)
+            target.x = 200
 
+            
     """Speed - Targets."""
     ontimer(move, 25)  # Smaller value = More speed
 
