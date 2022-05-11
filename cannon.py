@@ -1,11 +1,12 @@
-"""Cannon, hitting targets with projectiles.
+"""
+Game: Cannon (May 11th, 2022)
+Student 1: Alejandro Díaz Villagómez | A01276769
+Student 2: Emiliano Saucedo Arriola | A01659258
 
-Exercises
+Cannon, hitting targets with projectiles.
 
-1. Keep score by counting target hits.
-2. Vary the effect of gravity.
-3. Apply gravity to the targets.
-4. Change the speed of the ball.
+1. Make the movement speed for the projectile and the balls faster [DONE BY ALEJANDRO]
+2. Make the game never end, so that the balls when leaving the window are repositioned.[EMILIANO]
 """
 
 from random import randrange
@@ -57,8 +58,9 @@ def move():
     for target in targets:
         target.x -= 0.5
 
+    """Speed - Throwing ball."""
     if inside(ball):
-        speed.y -= 0.35
+        speed.y -= 0.2  # Smaller value = More speed
         ball.move(speed)
 
     dupe = targets.copy()
@@ -74,7 +76,8 @@ def move():
         if not inside(target):
             return
 
-    ontimer(move, 50)
+    """Speed - Targets."""
+    ontimer(move, 25)  # Smaller value = More speed
 
 
 setup(420, 420, 370, 0)
