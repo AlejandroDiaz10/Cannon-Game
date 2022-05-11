@@ -1,11 +1,13 @@
-"""Cannon, hitting targets with projectiles.
+"""
+Game: Cannon (Tiro parabolico) (May 11th, 2022)
+Student 1: Alejandro Díaz Villagómez | A01276769
+Student 2: Emiliano Saucedo Arriola | A01659258
 
 Exercises
 
-1. Keep score by counting target hits.
-2. Vary the effect of gravity.
-3. Apply gravity to the targets.
-4. Change the speed of the ball.
+1. Change the speed of the cannon and balls. [DONE by Alejandro]
+2. Make the game endless. [DONE by Emiliano]
+
 """
 
 from random import randrange
@@ -70,10 +72,13 @@ def move():
 
     draw()
 
+    # Not ending game - When dots go out of the screen (left side), they are relocated (right side)
     for target in targets:
         if not inside(target):
-            return
+            # return (Deleted line)
+            target.x = 200
 
+    # Game velocity
     ontimer(move, 50)
 
 
